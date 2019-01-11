@@ -1,7 +1,7 @@
 apackage providers
 
 import (
-	"bytom-gin/providers/util"
+	
 	"io/ioutil"
 	"net/http"
 	"strings"

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bytom-api/api"
+	"bytom-ipfs/api"
 	"io"
 	"os"
 

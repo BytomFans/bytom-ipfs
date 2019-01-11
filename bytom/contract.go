@@ -1,4 +1,4 @@
-package eth
+package byto
 
 import (
 	"encoding/json"

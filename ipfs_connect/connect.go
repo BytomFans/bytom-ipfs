@@ -1,4 +1,4 @@
-package ipfs
+package ipfs_connect
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	ipfs "github.com/ipfs/go-ipfs-api"
 )
 
-func Connection() {
+func ConnectionIpfs() {
 	// Where your local node is running on localhost:5001
 	port := "localhost:5001"
 	connect := ipfs.NewShell(port)

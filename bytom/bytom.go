@@ -1,8 +1,8 @@
-package eth
+package bytom
 
 import (
-	"bytom-api/dto"
-	"bytom-api/providers"
+	"bytom-ipfs/providers"
+	"ginblock/dto"
 )
 
 // The Block Modle
