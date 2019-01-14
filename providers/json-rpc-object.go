@@ -1,4 +1,4 @@
-package util
+package providers
 
 import (
 	"encoding/json"

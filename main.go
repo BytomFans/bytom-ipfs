@@ -21,6 +21,6 @@ func main() {
 	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
 
 	router := gin.Default()
-	router.POST("/block", api.RetireOnBytomChain)
+	router.POST("/block", api.AddFileToIpfs)
 	router.Run(":8090")
 }

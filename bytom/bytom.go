@@ -17,9 +17,9 @@ func NewBytom(provider providers.ProviderInterface) *Bytom {
 	return bytom
 }
 
-func (bytom *Bytom) Contract(jsonInterface string) (*Contract, error) {
-	return bytom.NewContract(jsonInterface)
-}
+// func (bytom *Bytom) Contract(jsonInterface string) (*Contract, error) {
+// 	return bytom.NewContract(jsonInterface)
+// }
 
 func (bytom *Bytom) sendTransaction(hash string) (*dto.Receipt, error) {
 	params := make([]string, 1)

@@ -1,4 +1,4 @@
-package byto
+package bytom
 
 import (
 	"encoding/json"

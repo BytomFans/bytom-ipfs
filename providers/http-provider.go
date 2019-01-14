@@ -1,7 +1,7 @@
-apackage providers
+package providers
 
 import (
-	
+	"eth-gin/providers/util"
 	"io/ioutil"
 	"net/http"
 	"strings"
