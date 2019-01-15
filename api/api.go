@@ -9,9 +9,17 @@ import (
 )
 
 func AddFileToIpfs(c *gin.Context) {
-	connect := conn.ConnectionIpfs()
-	c.JSON(http.StatusOK, gin.H{"fileds": connect})
+	add := conn.ConnectionIpfs()
+	c.JSON(http.StatusOK, gin.H{"fileds": add})
 	return
 }
-//发送一笔交易
 
+func TestBytomBlock(c *gin.Context) {
+	key, err := conn.ConnectionBytomNode()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"err": err})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"fileds": add})
+
+}

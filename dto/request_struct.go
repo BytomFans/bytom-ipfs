@@ -1,4 +1,4 @@
-package bytom
+package dto
 
 //钱包打开的情况下
 type Xpub struct {
@@ -10,13 +10,13 @@ type CreateKey struct {
 }
 
 type DeleteKey struct {
-	Xpub     Xpub.Xpub ` "xpub"`
+	Xpub     Xpub ` "xpub"`
 	Password string    `json:"password"`
 }
 
 //重置密钥密码
 type ResetKeyPassword struct {
-	Xpub        Xpub.Xpub `json:"xpub"`
+	Xpub        Xpub `json:"xpub"`
 	OldPassword string    `json:"old_password"`
 	NewPassword string    `json:"new_password"`
 }

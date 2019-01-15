@@ -1,6 +1,6 @@
 package providers
 
 type ProviderInterface interface {
-	SendRequest(params interface{}) error
+	SendRequest(v interface{}, method string, params interface{}) error
 	Close() error
 }

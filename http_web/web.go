@@ -1,15 +1,19 @@
-package bytom_rpc
+package http_web
 
-import "eth-gin/providers"
+import (
+	"bytom-ipfs/bytom"
+	"bytom-ipfs/providers"
+)
 
-// retire
+//web struct
 type Web struct {
 	Provider providers.ProviderInterface
+	Bytom    *bytom.Bytom
 }
 
-//Retire Module constructor to set the default provider, Bytom, Net and Personal
 func NewWeb(provider providers.ProviderInterface) *Web {
 	web := new(Web)
 	web.Provider = provider
+	web.Bytom = bytom.NewBytom(provider)
 	return web
 }

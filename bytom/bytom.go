@@ -1,8 +1,8 @@
 package bytom
 
 import (
+	"bytom-ipfs/dto"
 	"bytom-ipfs/providers"
-	"ginblock/dto"
 )
 
 // The Block Modle
@@ -17,19 +17,44 @@ func NewBytom(provider providers.ProviderInterface) *Bytom {
 	return bytom
 }
 
-// func (bytom *Bytom) Contract(jsonInterface string) (*Contract, error) {
-// 	return bytom.NewContract(jsonInterface)
-// }
+//create-key
+func (btm *Bytom) CreateKey() (string, error) {
 
-func (bytom *Bytom) sendTransaction(hash string) (*dto.Receipt, error) {
-	params := make([]string, 1)
-	params[0] = hash
+	pointer := &dto.RequestResult{}
 
-	err := bytom.provider.SendRequest(params)
+	err := btm.provider.SendRequest(pointer, "create_key", nil)
+
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	return nil, err
+	return pointer.ToString()
+
+}
+
+//create-account
+func (btm *Bytom) CreateAccount() (string, error) {
+	pointer := &dto.RequestResult{}
+
+	err := btm.provider.SendRequest(pointer, "create_account", nil)
+
+	if err != nil {
+		return "", err
+	}
+
+	return pointer.ToString()
+}
+
+//build-transaction
+func (btm *Bytom) BuildTransaction() (string, error) {
+	pointer := &dto.RequestResult{}
+
+	err := btm.provider.SendRequest(pointer, "build_transaction", nil)
+
+	if err != nil {
+		return "", err
+	}
+
+	return pointer.ToString()
 
 }
