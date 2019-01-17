@@ -3,11 +3,9 @@ package dto
 import (
 	"encoding/json"
 	"errors"
-	"eth-gin/complex/types"
 	"fmt"
 	"math/big"
 	"strconv"
-	"strings"
 )
 
 type RequestResult struct {
@@ -98,30 +96,30 @@ func (pointer *RequestResult) ToBigInt() (*big.Int, error) {
 	return ret, nil
 }
 
-func (pointer *RequestResult) ToComplexIntResponse() (types.ComplexIntResponse, error) {
+// func (pointer *RequestResult) ToComplexIntResponse() (types.ComplexIntResponse, error) {
 
-	if err := pointer.checkResponse(); err != nil {
-		return types.ComplexIntResponse(0), err
-	}
+// 	if err := pointer.checkResponse(); err != nil {
+// 		return types.ComplexIntResponse(0), err
+// 	}
 
-	result := (pointer).Result.(interface{})
+// 	result := (pointer).Result.(interface{})
 
-	var hex string
+// 	var hex string
 
-	switch v := result.(type) {
-	//Testrpc returns a float64
-	case float64:
-		hex = strconv.FormatFloat(v, 'E', 16, 64)
-		break
-	default:
-		hex = result.(string)
-	}
+// 	switch v := result.(type) {
+// 	//Testrpc returns a float64
+// 	case float64:
+// 		hex = strconv.FormatFloat(v, 'E', 16, 64)
+// 		break
+// 	default:
+// 		hex = result.(string)
+// 	}
 
-	cleaned := strings.TrimPrefix(hex, "0x")
+// 	cleaned := strings.TrimPrefix(hex, "0x")
 
-	return types.ComplexIntResponse(cleaned), nil
+// 	return types.ComplexIntResponse(cleaned), nil
 
-}
+// }
 
 func (pointer *RequestResult) ToBoolean() (bool, error) {
 

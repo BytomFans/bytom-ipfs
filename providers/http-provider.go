@@ -1,7 +1,6 @@
 package providers
 
 import (
-	"eth-gin/providers/util"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -36,7 +35,7 @@ func NewHTTPProviderWithClient(address string, timeout int32, secure bool, clien
 
 func (provider HTTPProvider) SendRequest(v interface{}, method string, params interface{}) error {
 
-	bodyString := util.JSONRPCObject{Params: params}
+	bodyString := JSONRPCObject{Params: params}
 
 	prefix := "http://"
 	if provider.secure {

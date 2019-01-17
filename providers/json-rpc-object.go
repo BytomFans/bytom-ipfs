@@ -6,7 +6,10 @@ import (
 )
 
 type JSONRPCObject struct {
-	Params interface{} `json:"params"`
+	Version string      `json:"jsonrpc"`
+	Method  string      `json:"method"`
+	Params  interface{} `json:"params"`
+	ID      int         `json:"id"`
 }
 
 func (jrpc *JSONRPCObject) AsJsonString() string {
